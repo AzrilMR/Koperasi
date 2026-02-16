@@ -4,28 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use App\Models\Transaction;
-use App\Models\Product;
 
-class TransactionDetail extends Model
+class DiscountSetting extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'transaction_id',
-        'product_id',
-        'qty',
-        'price',
-        'subtotal',
+        'minimal_belanja',
+        'persen_diskon',
+        'diskon_maksimum',
+        'is_active',
     ];
-
-    public function transaction()
-    {
-        return $this->belongsTo(Transaction::class);
-    }
-
-    public function product()
-    {
-        return $this->belongsTo(Product::class);
-    }
 }
